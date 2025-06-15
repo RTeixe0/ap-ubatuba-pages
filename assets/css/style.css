@@ -282,9 +282,7 @@ iframe {
   color: var(--text);
 }
 
-/* =====================
-   GALERIA EM MOSAICO
-   ===================== */
+/* GALERIA EM MOSAICO */
 .gallery {
   max-width: 900px;
   margin: 2rem auto;
