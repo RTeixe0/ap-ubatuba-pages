@@ -14,7 +14,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
+<body data-pasta="assets/img/dna" data-prefixo="dna" data-total="10">
   <div id="header"></div>
 
   <section class="hero">
@@ -27,15 +27,18 @@
   <section class="carousel">
     <div class="container">
       <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="assets/img/dna1.jpg" alt="Foto 1" /></div>
-          <div class="swiper-slide"><img src="assets/img/dna2.jpg" alt="Foto 2" /></div>
-          <div class="swiper-slide"><img src="assets/img/dna3.jpg" alt="Foto 3" /></div>
-        </div>
+        <div class="swiper-wrapper" id="carouselContainer"></div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="container">
+      <h2>Galeria de Fotos</h2>
+      <div class="mosaic-grid" id="galleryContainer"></div>
     </div>
   </section>
 
@@ -73,8 +76,8 @@
     </div>
   </section>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="assets/js/apartamentos.js"></script>
+  <script src="assets/js/script.js"></script>
 
   <script>
     // Carrega o header de forma dinâmica e só depois aplica os scripts
@@ -85,13 +88,20 @@
 
         const scriptAps = document.createElement('script');
         scriptAps.src = 'assets/js/apartamentos.js';
+        scriptAps.onload = () => {
+          const scriptMain = document.createElement('script');
+          scriptMain.src = 'assets/js/script.js';
+          document.body.appendChild(scriptMain);
+        };
         document.body.appendChild(scriptAps);
-
-        const scriptMain = document.createElement('script');
-        scriptMain.src = 'assets/js/script.js';
-        document.body.appendChild(scriptMain);
       });
   </script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+
 
   <!-- Modal da imagem ampliada -->
   <div class="img-modal" id="imgModal">
