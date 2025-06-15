@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grand Beach - Vista Mata</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-pasta="assets/img/gbmata" data-prefixo="gbmata" data-total="11">
+  <div id="header"></div>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Grand Beach</h1>
+      <p>Vista Mata • Ubatuba - SP</p>
+    </div>
+  </section>
+
+  <section class="carousel">
+    <div class="container">
+      <div class="swiper">
+        <div class="swiper-wrapper" id="carouselContainer"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+
+<section class="details">
+  <div class="container">
+    <h2>Sobre o apartamento</h2>
+    
+    <p><strong>Localização privilegiada</strong> – A apenas 100 metros da Praia Grande, com vista para a Mata Atlântica:</p>
+    <ul>
+      <li>Sacada gourmet com churrasqueira, fechada em blindex</li>
+      <li>Som do canto dos pássaros e muito contato com a natureza</li>
+    </ul>
+
+    <p><strong>Apartamento espaçoso e climatizado</strong> – Ideal para até 8 hóspedes:</p>
+    <ul>
+      <li>2 dormitórios: 1 cama de casal + auxiliar / 2 camas de solteiro + 3 colchões extras</li>
+      <li>Sala com sofá-cama e TV</li>
+      <li>Cozinha planejada completa</li>
+      <li>Sala de jantar com mesa ampla</li>
+    </ul>
+
+    <p><strong>Estrutura do condomínio:</strong></p>
+    <ul>
+      <li>Piscina adulto e infantil</li>
+      <li>Salão de jogos</li>
+      <li>Natureza preservada ao fundo</li>
+    </ul>
+
+    <p><strong>Informações úteis:</strong></p>
+    <ul>
+      <li>2º andar com elevador e escadas</li>
+      <li>1 vaga coberta na garagem</li>
+      <li>Não são permitidos pets</li>
+    </ul>
+
+    <p><em>* Possuímos mais um apartamento no mesmo prédio para grupos maiores.</em></p>
+  </div>
+</section>
+
+
+  <section class="gallery">
+    <div class="container">
+      <h2>Galeria de Fotos</h2>
+      <div class="mosaic-grid" id="galleryContainer"></div>
+    </div>
+  </section>
+
+
+  <section class="map">
+    <div class="container">
+      <h2>Localização</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d449.06098195387784!2d-45.06935289752858!3d-23.472434602076692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd53e48ffe8bf1%3A0x1fb1de5d5529b4b!2sCondom%C3%ADnio%20Grand%20Beach!5e0!3m2!1spt-BR!2sbr!4v1750013380063!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <a href="https://wa.me/5519997341037?text=Olá! Tenho interesse no apartamento frente ao mar. Ele está disponível para as datas [xx/xx - xx/xx]?"
+         target="_blank"
+         class="whatsapp-btn whatsapp-fixed">
+        Quero reservar agora!
+      </a>
+    </div>
+  </section>
+
+  <script>
+    // Carrega o header de forma dinâmica e só depois aplica os scripts
+    fetch('partials/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+
+        const scriptAps = document.createElement('script');
+        scriptAps.src = 'assets/js/apartamentos.js';
+        scriptAps.onload = () => {
+          const scriptMain = document.createElement('script');
+          scriptMain.src = 'assets/js/script.js';
+          document.body.appendChild(scriptMain);
+        };
+        document.body.appendChild(scriptAps);
+      });
+  </script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+
+
+  <!-- Modal da imagem ampliada -->
+  <div class="img-modal" id="imgModal">
+    <div class="img-modal-content">
+      <button class="close-modal" id="closeModal">&times;</button>
+      <img id="modalImage" src="about:blank" alt="Imagem ampliada" />
+    </div>
+  </div>
+</body>
+</html>
