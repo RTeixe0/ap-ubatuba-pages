@@ -175,6 +175,14 @@ iframe {
   background: #005f8e;
 }
 
+.whatsapp-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  margin: 0;
+  z-index: 1000;
+}
+
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
