@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reserva DNA - Frente ao Mar</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="header"></div>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Reserva DNA</h1>
+      <p>Frente ao mar • Ubatuba - SP</p>
+    </div>
+  </section>
+
+  <section class="carousel">
+    <div class="container">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/img/dna1.jpg" alt="Foto 1" /></div>
+          <div class="swiper-slide"><img src="assets/img/dna2.jpg" alt="Foto 2" /></div>
+          <div class="swiper-slide"><img src="assets/img/dna3.jpg" alt="Foto 3" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="container">
+      <h2>Sobre o apartamento</h2>
+      <ul>
+        <li>Frente ao mar</li>
+        <li>2 quartos (1 suíte)</li>
+        <li>Até 6 pessoas</li>
+        <li>Wi-Fi, TV, ar-condicionado</li>
+        <li>Piscina, churrasqueira</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="map">
+    <div class="container">
+      <h2>Localização</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.123905911218!2d-45.0789219!3d-23.7167185"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <a href="https://wa.me/5519997341037?text=Olá! Tenho interesse no apartamento frente ao mar. Ele está disponível para as datas [xx/xx - xx/xx]?"
+         target="_blank"
+         class="whatsapp-btn">
+        Reservar pelo WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <script>
+    // Carrega o header de forma dinâmica e só depois aplica os scripts
+    fetch('partials/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+
+        const scriptAps = document.createElement('script');
+        scriptAps.src = 'assets/js/apartamentos.js';
+        document.body.appendChild(scriptAps);
+
+        const scriptMain = document.createElement('script');
+        scriptMain.src = 'assets/js/script.js';
+        document.body.appendChild(scriptMain);
+      });
+  </script>
+
+  <!-- Modal da imagem ampliada -->
+  <div class="img-modal" id="imgModal">
+    <div class="img-modal-content">
+      <button class="close-modal" id="closeModal">&times;</button>
+      <img id="modalImage" src="" alt="Imagem ampliada" />
+    </div>
+  </div>
+</body>
+</html>
