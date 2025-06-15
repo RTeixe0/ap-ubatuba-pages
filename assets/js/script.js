@@ -1,7 +1,8 @@
-window.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("imgModal");
-  const modalImg = document.getElementById("modalImage");
-  const closeModalBtn = document.getElementById("closeModal");
+(() => {
+  const init = () => {
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeModalBtn = document.getElementById("closeModal");
 
   // Configuração das imagens
   const body = document.body;
@@ -87,4 +88,11 @@ window.addEventListener("DOMContentLoaded", () => {
       navContainer.appendChild(a);
     });
   }
-});
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
