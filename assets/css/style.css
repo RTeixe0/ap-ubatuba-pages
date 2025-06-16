@@ -50,8 +50,10 @@ header {
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   margin: 1rem 0;
+  padding: 2rem;
+}
 
 .social-icons .icon {
   width: 1.75rem;
