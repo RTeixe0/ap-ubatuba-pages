@@ -14,7 +14,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body data-pasta="assets/img/gbpis" data-prefixo="gbpis" data-total="10">
+<body data-pasta="assets/img/gbpis" data-prefixo="gbpis" data-total="10" data-whatsapp-msg="Olá! Tenho interesse no apartamento com vista para a piscina no Grand Beach. Ele está disponível entre [xx/xx - xx/xx]? Pode me enviar as informações?">
   <div id="header"></div>
 
   <section class="hero scroll-animate">
@@ -38,33 +38,43 @@
 <section class="details scroll-animate">
   <div class="container">
     <h2>Sobre o apartamento</h2>
-    
-    <p><strong>Localização privilegiada</strong> – A apenas 50 metros da Praia Grande, com vista direta para a piscina:</p>
-    <ul>
-      <li>Sacada gourmet com churrasqueira, rede de proteção e ambiente tranquilo</li>
-      <li>Contato com a natureza e canto dos pássaros</li>
-    </ul>
+    <div class="quick-summary">
+      <ul class="summary-list">
+        <li>50m da praia 🏖️</li>
+        <li>Vista para a piscina 🏊</li>
+        <li>Até 8 pessoas 👨‍👩‍👧‍👦</li>
+        <li>Sacada gourmet 🍖</li>
+      </ul>
+    </div>
 
-    <p><strong>Apartamento amplo e climatizado</strong> – Ideal para até 8 hóspedes:</p>
-    <ul>
-      <li>2 dormitórios: 1 cama de casal + 2 colchões / 2 camas de solteiro + 2 colchões</li>
-      <li>Sala de jantar e sala de estar</li>
-      <li>Cozinha planejada e equipada</li>
-    </ul>
-
-    <p><strong>Estrutura do condomínio:</strong></p>
-    <ul>
-      <li>Piscina adulto e infantil</li>
-      <li>Salão de jogos</li>
-      <li>Área verde preservada</li>
-    </ul>
-
-    <p><strong>Informações úteis:</strong></p>
-    <ul>
-      <li>2º andar com elevador e escadas</li>
-      <li>1 vaga coberta na garagem</li>
-      <li>Não são permitidos pets</li>
-    </ul>
+    <div class="details-grid">
+      <div class="details-block">
+        <h3>Estrutura do condomínio</h3>
+        <ul class="condo-list">
+          <li>Piscina adulto e infantil</li>
+          <li>Salão de jogos</li>
+          <li>Área verde preservada</li>
+        </ul>
+      </div>
+      <div class="details-block">
+        <h3>Detalhes do apartamento</h3>
+        <ul class="apartment-list">
+          <li>2 dormitórios: 1 cama de casal + 2 colchões / 2 camas de solteiro + 2 colchões</li>
+          <li>Sala de jantar e sala de estar</li>
+          <li>Cozinha planejada e equipada</li>
+          <li>Sacada gourmet com churrasqueira, rede de proteção e ambiente tranquilo</li>
+          <li>Contato com a natureza e canto dos pássaros</li>
+        </ul>
+      </div>
+      <div class="details-block">
+        <h3>Informações úteis</h3>
+        <ul class="info-list">
+          <li>2º andar com elevador e escadas</li>
+          <li>1 vaga coberta na garagem</li>
+          <li>Não são permitidos pets</li>
+        </ul>
+      </div>
+    </div>
 
     <p><em>* Possuímos mais um apartamento no mesmo prédio para grupos maiores.</em></p>
   </div>
@@ -86,15 +96,6 @@
     </div>
   </section>
 
-  <section class="contact scroll-animate">
-    <div class="container">
-      <a href="https://wa.me/5519997341037?text=Olá! Tenho interesse no apartamento com vista para a piscina no Grand Beach. Ele está disponível entre [xx/xx - xx/xx]? Pode me enviar as informações?"
-         target="_blank"
-         class="whatsapp-btn whatsapp-fixed">
-        Quero reservar agora!
-      </a>
-    </div>
-  </section>
 
   <script>
     // Carrega o header de forma dinâmica e só depois aplica os scripts
@@ -109,6 +110,10 @@
           const scriptMain = document.createElement('script');
           scriptMain.src = 'assets/js/script.js';
           document.body.appendChild(scriptMain);
+
+          const scriptWpp = document.createElement('script');
+          scriptWpp.src = 'assets/js/whatsapp.js';
+          document.body.appendChild(scriptWpp);
         };
         document.body.appendChild(scriptAps);
       });

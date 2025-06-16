@@ -14,7 +14,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body data-pasta="assets/img/dna" data-prefixo="dna" data-total="17">
+<body data-pasta="assets/img/dna" data-prefixo="dna" data-total="17" data-whatsapp-msg="Olá! Vi o apartamento de frente ao mar no Reserva DNA e gostaria de saber se ele está disponível para as datas [xx/xx - xx/xx]. Pode me passar mais informações?">
   <div id="header"></div>
 
   <section class="hero scroll-animate">
@@ -38,30 +38,42 @@
 <section class="details scroll-animate">
   <div class="container">
     <h2>Sobre o apartamento</h2>
-    
-    <p><strong>Condomínio Reserva DNA</strong> – Frente ao mar na Praia Grande, com infraestrutura de alto padrão:</p>
-    <ul>
-      <li>3 saunas, 2 jacuzzis, 2 academias</li>
-      <li>Cinema, brinquedoteca, salão de jogos</li>
-      <li>Piscinas climatizadas e trilha na cobertura</li>
-    </ul>
+    <div class="quick-summary">
+      <ul class="summary-list">
+        <li>Frente ao mar 🏖️</li>
+        <li>Sacada gourmet 🍖</li>
+        <li>2 suítes 👨‍👩‍👧‍👦</li>
+        <li>Piscina, cinema e lazer completo 🎬</li>
+      </ul>
+    </div>
 
-    <p><strong>Apartamento 13.1.4</strong> – Climatizado, espaçoso e ideal para até 6 hóspedes:</p>
-    <ul>
-      <li>2 suítes (1 cama de casal + auxiliar / 3 camas de solteiro + auxiliares)</li>
-      <li>Sala com sofá-cama e TV</li>
-      <li>Cozinha completa planejada</li>
-      <li>Sacada gourmet com churrasqueira e vista para o jardim</li>
-    </ul>
-
-    <p><strong>Informações adicionais:</strong></p>
-    <ul>
-      <li>2 vagas de garagem coberta</li>
-      <li>Pets de pequeno porte são permitidos</li>
-      <li>Acesso total à área de lazer do condomínio</li>
-      <li>Check-in: após 13h | Check-out: até 9h</li>
-      <li>1º andar com elevador</li>
-    </ul>
+    <div class="details-grid">
+      <div class="details-block">
+        <h3>Estrutura do condomínio</h3>
+        <ul class="condo-list">
+          <li>3 saunas, 2 jacuzzis, 2 academias</li>
+          <li>Cinema, brinquedoteca, salão de jogos</li>
+          <li>Piscinas climatizadas e trilha na cobertura</li>
+        </ul>
+      </div>
+      <div class="details-block">
+        <h3>Detalhes do apartamento</h3>
+        <ul class="apartment-list">
+          <li>2 suítes (1 cama de casal + auxiliar / 3 camas de solteiro + auxiliares)</li>
+          <li>Sala com sofá-cama e TV</li>
+          <li>Cozinha completa planejada</li>
+          <li>Sacada gourmet com churrasqueira e vista para o jardim</li>
+        </ul>
+      </div>
+      <div class="details-block">
+        <h3>Informações adicionais</h3>
+        <ul class="info-list">
+          <li>2 vagas de garagem coberta</li>
+          <li>Pets de pequeno porte são permitidos</li>
+          <li>Acesso total à área de lazer do condomínio</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -80,15 +92,6 @@
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1581.1991862788047!2d-45.068786620037855!3d-23.472606205201323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd53fb3416497f%3A0x9087ddb800ce647!2sReserva%20DNA!5e0!3m2!1spt-BR!2sbr!4v1750010793129!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
   </section>
 
-  <section class="contact scroll-animate">
-    <div class="container">
-      <a href="https://wa.me/5519997341037?text=Olá! Vi o apartamento de frente ao mar no Reserva DNA e gostaria de saber se ele está disponível para as datas [xx/xx - xx/xx]. Pode me passar mais informações?"
-         target="_blank"
-         class="whatsapp-btn whatsapp-fixed">
-        Quero reservar agora!
-      </a>
-    </div>
-  </section>
 
   <script>
     // Carrega o header de forma dinâmica e só depois aplica os scripts
@@ -103,6 +106,10 @@
           const scriptMain = document.createElement('script');
           scriptMain.src = 'assets/js/script.js';
           document.body.appendChild(scriptMain);
+
+          const scriptWpp = document.createElement('script');
+          scriptWpp.src = 'assets/js/whatsapp.js';
+          document.body.appendChild(scriptWpp);
         };
         document.body.appendChild(scriptAps);
       });
