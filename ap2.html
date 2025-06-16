@@ -14,7 +14,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body data-pasta="assets/img/gbmata" data-prefixo="gbmata" data-total="11">
+<body data-pasta="assets/img/gbmata" data-prefixo="gbmata" data-total="11" data-whatsapp-msg="Oi! Gostei do apartamento no Grand Beach com vista para a mata e sacada gourmet. Ele está disponível nas datas [xx/xx - xx/xx]?">
   <div id="header"></div>
 
   <section class="hero scroll-animate">
@@ -87,16 +87,6 @@
     </div>
   </section>
 
-  <section class="contact scroll-animate">
-    <div class="container">
-      <a href="https://wa.me/5519997341037?text=Oi! Gostei do apartamento no Grand Beach com vista para a mata e sacada gourmet. Ele está disponível nas datas [xx/xx - xx/xx]?"
-         target="_blank"
-         class="whatsapp-btn whatsapp-fixed">
-        <img src="assets/img/whatsapp.svg" alt="WhatsApp" />
-        Quero reservar agora!
-      </a>
-    </div>
-  </section>
 
   <script>
     // Carrega o header de forma dinâmica e só depois aplica os scripts
@@ -111,6 +101,10 @@
           const scriptMain = document.createElement('script');
           scriptMain.src = 'assets/js/script.js';
           document.body.appendChild(scriptMain);
+
+          const scriptWpp = document.createElement('script');
+          scriptWpp.src = 'assets/js/whatsapp.js';
+          document.body.appendChild(scriptWpp);
         };
         document.body.appendChild(scriptAps);
       });
