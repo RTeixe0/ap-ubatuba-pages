@@ -14,7 +14,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body data-pasta="assets/img/dna" data-prefixo="dna" data-total="17">
+<body data-pasta="assets/img/dna" data-prefixo="dna" data-total="17" data-whatsapp-msg="Olá! Vi o apartamento de frente ao mar no Reserva DNA e gostaria de saber se ele está disponível para as datas [xx/xx - xx/xx]. Pode me passar mais informações?">
   <div id="header"></div>
 
   <section class="hero scroll-animate">
@@ -80,16 +80,6 @@
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1581.1991862788047!2d-45.068786620037855!3d-23.472606205201323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd53fb3416497f%3A0x9087ddb800ce647!2sReserva%20DNA!5e0!3m2!1spt-BR!2sbr!4v1750010793129!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
   </section>
 
-  <section class="contact scroll-animate">
-    <div class="container">
-      <a href="https://wa.me/5519997341037?text=Olá! Vi o apartamento de frente ao mar no Reserva DNA e gostaria de saber se ele está disponível para as datas [xx/xx - xx/xx]. Pode me passar mais informações?"
-         target="_blank"
-        class="whatsapp-btn whatsapp-fixed">
-        <img src="assets/img/whatsapp.svg" alt="WhatsApp" />
-        Quero reservar agora!
-      </a>
-    </div>
-  </section>
 
   <script>
     // Carrega o header de forma dinâmica e só depois aplica os scripts
@@ -104,6 +94,10 @@
           const scriptMain = document.createElement('script');
           scriptMain.src = 'assets/js/script.js';
           document.body.appendChild(scriptMain);
+
+          const scriptWpp = document.createElement('script');
+          scriptWpp.src = 'assets/js/whatsapp.js';
+          document.body.appendChild(scriptWpp);
         };
         document.body.appendChild(scriptAps);
       });
