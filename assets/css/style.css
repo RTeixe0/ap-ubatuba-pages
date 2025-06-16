@@ -238,8 +238,8 @@ iframe {
   align-items: center;
   gap: 0.5rem;
   width: fit-content;
-  margin: 2rem auto;
-  padding: 1rem 2rem;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
   background: var(--primary);
   color: var(--accent);
   text-decoration: none;
