@@ -47,6 +47,24 @@ header {
   filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
 }
 
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.social-icons .icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--accent);
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover .icon {
+  transform: scale(1.1);
+}
+
 .hero {
   text-align: center;
   padding: 2rem 1rem;
