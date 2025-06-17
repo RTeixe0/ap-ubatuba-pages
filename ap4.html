@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Riviera</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-pasta="assets/img/riviera" data-prefixo="riviera" data-total="16" data-whatsapp-msg="Olá! Tenho interesse no apartamento com vista para a piscina no Grand Beach. Ele está disponível entre [xx/xx - xx/xx]? Pode me enviar as informações?">
+  <div id="header"></div>
+
+  <section class="hero scroll-animate">
+    <div class="container">
+      <h1>Riviera</h1>
+     <!-- <p>Vista Piscina • Ubatuba - SP</p> -->
+    </div>
+  </section>
+
+  <section class="carousel scroll-animate">
+    <div class="container">
+      <div class="swiper">
+        <div class="swiper-wrapper" id="carouselContainer"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+
+<section class="details scroll-animate">
+  <div class="container">
+    <h2>Sobre o apartamento</h2>
+    <div class="quick-summary">
+     <!-- <ul class="summary-list">
+        <li>50m da praia 🏖️</li>
+        <li>Vista para a piscina 🏊</li>
+        <li>Até 8 pessoas 👨‍👩‍👧‍👦</li>
+        <li>Sacada gourmet 🍖</li>
+      </ul> -->
+    </div>
+
+    <div class="details-grid">
+      <div class="details-block">
+        <h3>Estrutura do condomínio</h3>
+        <ul class="condo-list">
+          <!-- <li>Piscina adulto e infantil</li>
+          <li>Salão de jogos</li>
+          <li>Área verde preservada</li> 
+        </ul> -->
+      </div>
+      <div class="details-block">
+        <h3>Detalhes do apartamento</h3>
+        <ul class="apartment-list">
+        <!--  <li>2 dormitórios: 1 cama de casal + 2 colchões / 2 camas de solteiro + 2 colchões</li>
+          <li>Sala de jantar e sala de estar</li>
+          <li>Cozinha planejada e equipada</li>
+          <li>Sacada gourmet com churrasqueira, rede de proteção e ambiente tranquilo</li>
+          <li>Contato com a natureza e canto dos pássaros</li> 
+        </ul> -->
+      </div>
+      <div class="details-block">
+        <h3>Informações úteis</h3>
+       <!-- <ul class="info-list">
+          <li>2º andar com elevador e escadas</li>
+          <li>1 vaga coberta na garagem</li>
+          <li>Não são permitidos pets</li>
+        </ul> -->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <section class="gallery scroll-animate">
+    <div class="container">
+      <h2>Galeria de Fotos</h2>
+      <div class="mosaic-grid" id="galleryContainer"></div>
+    </div>
+  </section>
+
+
+  <section class="map scroll-animate">
+    <div class="container">
+      <h2>Localização</h2>
+    </div>
+  </section>
+
+
+  <script>
+    // Carrega o header de forma dinâmica e só depois aplica os scripts
+    fetch('partials/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+
+        const scriptAps = document.createElement('script');
+        scriptAps.src = 'assets/js/apartamentos.js';
+        scriptAps.onload = () => {
+          const scriptMain = document.createElement('script');
+          scriptMain.src = 'assets/js/script.js';
+          document.body.appendChild(scriptMain);
+
+          const scriptWpp = document.createElement('script');
+          scriptWpp.src = 'assets/js/whatsapp.js';
+          document.body.appendChild(scriptWpp);
+        };
+        document.body.appendChild(scriptAps);
+      });
+  </script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+
+
+  <!-- Modal da imagem ampliada -->
+  <div class="img-modal" id="imgModal">
+    <div class="img-modal-content">
+      <button class="close-modal" id="closeModal">&times;</button>
+      <img id="modalImage" src="about:blank" alt="Imagem ampliada" />
+    </div>
+  </div>
+</body>
+</html>
