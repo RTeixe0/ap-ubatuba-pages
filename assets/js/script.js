@@ -31,6 +31,7 @@
       const thumb = document.createElement("img");
       thumb.src = src;
       thumb.alt = `Foto ${i}`;
+      thumb.loading = "lazy";
       thumb.className = "mosaic-img";
       galleryContainer.appendChild(thumb);
     }
