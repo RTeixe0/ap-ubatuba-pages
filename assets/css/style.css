@@ -427,3 +427,99 @@ iframe {
   opacity: 1;
   transform: translateY(0);
 }
+
+.details-text {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1.5rem;
+  border-radius: 12px;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.details-text p {
+  margin-bottom: 2rem;
+  white-space: pre-line;
+}
+.details-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.text-block h3 {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.text-block ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.text-block ul li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.text-block ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+  left: 0.6rem;
+  color: var(--accent);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.highlight {
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #ffd43b;
+}
+.badge-block {
+  margin-bottom: 1rem;
+}
+
+.badge-block h3 {
+  margin-top: 1rem;
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2rem;
+  line-height: 1;  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  vertical-align: middle;
+}
+
+.badge.destaque {
+  background: rgba(255, 212, 59, 0.1);
+  color: #ffd43b;
+  font-weight: 500;
+  margin-top: 1rem;
+  padding-inline: 5rem;
+}
