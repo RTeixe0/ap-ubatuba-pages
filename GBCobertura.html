@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grand Beach - Cobertura</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-pasta="assets/img/gbcobertura" data-prefixo="gbcobertura" data-total="19" data-whatsapp-msg="Olá! Gostei muito da cobertura duplex no Grand Beach. Poderia me informar se está disponível entre [xx/xx - xx/xx]?">
+  <div id="header"></div>
+
+  <section class="hero scroll-animate">
+    <div class="container">
+      <h1>Grand Beach</h1>
+      <p>Cobertura • Ubatuba - SP</p>
+    </div>
+  </section>
+
+  <section class="carousel scroll-animate">
+    <div class="container">
+      <div class="swiper">
+        <div class="swiper-wrapper" id="carouselContainer"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+
+<section class="details scroll-animate">
+  <div class="container">
+    <div class="badge-block">
+      <h3>🏠 Sobre o apartamento</h3>
+      <div class="badges">
+        <span class="badge">Cobertura duplex 🏢⬆️</span>
+        <span class="badge">4 dormitórios, sendo 2 suítes 🛏️🛁</span>
+        <span class="badge">4 banheiros no total 🚿</span>
+        <span class="badge">Cozinha equipada 🍽️</span>
+        <span class="badge">Até 10 pessoas 👨‍👩‍👧‍👦</span>
+        <span class="badge destaque">2 vagas cobertas na garagem 🚗🚗</span>
+      </div>
+    </div>
+
+    <div class="badge-block">
+      <h3>📌 Informações importantes</h3>
+      <div class="badges">
+        <span class="badge">Não é permitido pets 🚫🐾</span>
+        <span class="badge destaque">Ideal para grupos e famílias grandes ✨</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="gallery scroll-animate">
+    <div class="container">
+      <h2>Galeria de Fotos</h2>
+      <div class="mosaic-grid" id="galleryContainer"></div>
+    </div>
+  </section>
+
+
+  <section class="map scroll-animate">
+    <div class="container">
+      <h2>Localização</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d449.06098195387784!2d-45.06935289752858!3d-23.472434602076692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd53e48ffe8bf1%3A0x1fb1de5d5529b4b!2sCondom%C3%ADnio%20Grand%20Beach!5e0!3m2!1spt-BR!2sbr!4v1750013380063!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+
+  <script>
+    // Carrega o header de forma dinâmica e só depois aplica os scripts
+    fetch('partials/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+
+        const scriptAps = document.createElement('script');
+        scriptAps.src = 'assets/js/apartamentos.js';
+        scriptAps.onload = () => {
+          const scriptMain = document.createElement('script');
+          scriptMain.src = 'assets/js/script.js';
+          document.body.appendChild(scriptMain);
+
+          const scriptWpp = document.createElement('script');
+          scriptWpp.src = 'assets/js/whatsapp.js';
+          document.body.appendChild(scriptWpp);
+        };
+        document.body.appendChild(scriptAps);
+      });
+  </script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+
+
+  <!-- Modal da imagem ampliada -->
+  <div class="img-modal" id="imgModal">
+    <div class="img-modal-content">
+      <button class="close-modal" id="closeModal">&times;</button>
+      <img id="modalImage" src="about:blank" alt="Imagem ampliada" />
+    </div>
+  </div>
+</body>
+</html>
