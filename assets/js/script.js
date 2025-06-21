@@ -49,7 +49,7 @@
     }
 
     // === 3. Inicialização da galeria de forma suave ===
-    if ('requestIdleCallback' in window) {
+    if ("requestIdleCallback" in window) {
       requestIdleCallback(() => loadNextBatch());
     } else {
       setTimeout(() => loadNextBatch(), 500);
@@ -57,7 +57,10 @@
 
     // === 4. Carregamento progressivo ao rolar ===
     window.addEventListener("scroll", () => {
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 300) {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 300
+      ) {
         if (loaded < totalImagens) loadNextBatch();
       }
     });
@@ -94,7 +97,7 @@
     const navContainer = document.getElementById("menu-apartamentos");
     if (navContainer && typeof apartamentos !== "undefined") {
       const currentPage = window.location.pathname.split("/").pop();
-      apartamentos.forEach(ap => {
+      apartamentos.forEach((ap) => {
         const a = document.createElement("a");
         a.href = ap.arquivo;
         a.textContent = ap.nome;
@@ -105,16 +108,21 @@
     }
 
     // === 8. Scroll animation ===
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
 
-    document.querySelectorAll(".scroll-animate").forEach(el => observer.observe(el));
+    document
+      .querySelectorAll(".scroll-animate")
+      .forEach((el) => observer.observe(el));
   };
 
   if (document.readyState === "loading") {

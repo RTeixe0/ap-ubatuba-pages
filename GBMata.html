@@ -1,132 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grand Beach - Vista Mata</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grand Beach - Vista Mata</title>
 
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-<body data-pasta="assets/img/gbmata" data-prefixo="gbmata" data-total="11" data-whatsapp-msg="Olá! Me interessei pelo apartamento no Grand Beach com vista para a mata. Ele está disponível para os dias [xx/xx - xx/xx]?">
-  <div id="header"></div>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body
+    data-pasta="assets/img/gbmata"
+    data-prefixo="gbmata"
+    data-total="11"
+    data-whatsapp-msg="Olá! Me interessei pelo apartamento no Grand Beach com vista para a mata. Ele está disponível para os dias [xx/xx - xx/xx]?"
+  >
+    <div id="header"></div>
 
-  <section class="hero scroll-animate">
-    <div class="container">
-      <h1>Grand Beach</h1>
-      <p>Vista Mata • Ubatuba - SP</p>
-    </div>
-  </section>
+    <section class="hero scroll-animate">
+      <div class="container">
+        <h1>Grand Beach</h1>
+        <p>Vista Mata • Ubatuba - SP</p>
+      </div>
+    </section>
 
-  <section class="carousel scroll-animate">
-    <div class="container">
-      <div class="swiper">
-        <div class="swiper-wrapper" id="carouselContainer"></div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+    <section class="carousel scroll-animate">
+      <div class="container">
+        <div class="swiper">
+          <div class="swiper-wrapper" id="carouselContainer"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="details scroll-animate">
+      <div class="container">
+        <div class="badge-block">
+          <h3>🏠 Sobre o apartamento</h3>
+          <div class="badges">
+            <span class="badge">2 dormitórios 🛏️</span>
+            <span class="badge">Sala com sofá-cama e TV 📺</span>
+            <span class="badge">Cozinha planejada completa 🍽️</span>
+            <span class="badge">Sacada gourmet com churrasqueira 🍖</span>
+            <span class="badge">Até 8 pessoas 👨‍👩‍👧‍👦</span>
+            <span class="badge destaque">Contato com a natureza 🌿</span>
+          </div>
+        </div>
+
+        <div class="badge-block">
+          <h3>🏢 Sobre o condomínio</h3>
+          <div class="badges">
+            <span class="badge">Piscina adulto e infantil 🏊‍♂️</span>
+            <span class="badge">Salão de jogos 🎮</span>
+            <span class="badge">Natureza preservada ao fundo 🌴</span>
+            <span class="badge">100m da praia 🏖️</span>
+            <span class="badge destaque">Ambiente familiar e tranquilo ☀️</span>
+          </div>
+        </div>
+
+        <div class="badge-block">
+          <h3>ℹ️ Informações úteis</h3>
+          <div class="badges">
+            <span class="badge">2º andar com elevador e escadas 🛗</span>
+            <span class="badge">1 vaga coberta 🚗</span>
+            <span class="badge">Não são permitidos pets 🚫🐶</span>
+            <span class="badge destaque">Mais um ap. no mesmo prédio 🏢</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery scroll-animate">
+      <div class="container">
+        <h2>Galeria de Fotos</h2>
+        <div class="mosaic-grid" id="galleryContainer"></div>
+      </div>
+    </section>
+
+    <section class="map scroll-animate">
+      <div class="container">
+        <h2>Localização</h2>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2085.653667386424!2d-45.070356618588825!3d-23.472692486101423!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd53e48ffe8bf1%3A0x1fb1de5d5529b4b!2sCondom%C3%ADnio%20Grand%20Beach!5e1!3m2!1spt-BR!2sbr!4v1750516663481!5m2!1spt-BR!2sbr"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <script>
+      // Carrega o header de forma dinâmica e só depois aplica os scripts
+      fetch("partials/header.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+
+          const scriptAps = document.createElement("script");
+          scriptAps.src = "assets/js/apartamentos.js";
+          scriptAps.onload = () => {
+            const scriptMain = document.createElement("script");
+            scriptMain.src = "assets/js/script.js";
+            document.body.appendChild(scriptMain);
+
+            const scriptWpp = document.createElement("script");
+            scriptWpp.src = "assets/js/whatsapp.js";
+            document.body.appendChild(scriptWpp);
+          };
+          document.body.appendChild(scriptAps);
+        });
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Modal da imagem ampliada -->
+    <div class="img-modal" id="imgModal">
+      <div class="img-modal-content">
+        <button class="close-modal" id="closeModal">&times;</button>
+        <img id="modalImage" src="about:blank" alt="Imagem ampliada" />
       </div>
     </div>
-  </section>
-
-<section class="details scroll-animate">
-  <div class="container">
-    <div class="badge-block">
-      <h3>🏠 Sobre o apartamento</h3>
-      <div class="badges">
-        <span class="badge">2 dormitórios 🛏️</span>
-        <span class="badge">Sala com sofá-cama e TV 📺</span>
-        <span class="badge">Cozinha planejada completa 🍽️</span>
-        <span class="badge">Sacada gourmet com churrasqueira 🍖</span>
-        <span class="badge">Até 8 pessoas 👨‍👩‍👧‍👦</span>
-        <span class="badge destaque">Contato com a natureza 🌿</span>
-      </div>
-    </div>
-
-    <div class="badge-block">
-      <h3>🏢 Sobre o condomínio</h3>
-      <div class="badges">
-        <span class="badge">Piscina adulto e infantil 🏊‍♂️</span>
-        <span class="badge">Salão de jogos 🎮</span>
-        <span class="badge">Natureza preservada ao fundo 🌴</span>
-        <span class="badge">100m da praia 🏖️</span>
-        <span class="badge destaque">Ambiente familiar e tranquilo ☀️</span>
-      </div>
-    </div>
-
-    <div class="badge-block">
-      <h3>ℹ️ Informações úteis</h3>
-      <div class="badges">
-        <span class="badge">2º andar com elevador e escadas 🛗</span>
-        <span class="badge">1 vaga coberta 🚗</span>
-        <span class="badge">Não são permitidos pets 🚫🐶</span>
-        <span class="badge destaque">Mais um ap. no mesmo prédio 🏢</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-  <section class="gallery scroll-animate">
-    <div class="container">
-      <h2>Galeria de Fotos</h2>
-      <div class="mosaic-grid" id="galleryContainer"></div>
-    </div>
-  </section>
-
-
-  <section class="map scroll-animate">
-    <div class="container">
-      <h2>Localização</h2>
-
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2085.653667386424!2d-45.070356618588825!3d-23.472692486101423!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd53e48ffe8bf1%3A0x1fb1de5d5529b4b!2sCondom%C3%ADnio%20Grand%20Beach!5e1!3m2!1spt-BR!2sbr!4v1750516663481!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
-    
-      </div>
-  </section>
-
-
-  <script>
-    // Carrega o header de forma dinâmica e só depois aplica os scripts
-    fetch('partials/header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header').innerHTML = data;
-
-        const scriptAps = document.createElement('script');
-        scriptAps.src = 'assets/js/apartamentos.js';
-        scriptAps.onload = () => {
-          const scriptMain = document.createElement('script');
-          scriptMain.src = 'assets/js/script.js';
-          document.body.appendChild(scriptMain);
-
-          const scriptWpp = document.createElement('script');
-          scriptWpp.src = 'assets/js/whatsapp.js';
-          document.body.appendChild(scriptWpp);
-        };
-        document.body.appendChild(scriptAps);
-      });
-  </script>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-
-
-
-  <!-- Modal da imagem ampliada -->
-  <div class="img-modal" id="imgModal">
-    <div class="img-modal-content">
-      <button class="close-modal" id="closeModal">&times;</button>
-      <img id="modalImage" src="about:blank" alt="Imagem ampliada" />
-    </div>
-  </div>
-</body>
+  </body>
 </html>

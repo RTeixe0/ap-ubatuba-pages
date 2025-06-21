@@ -8,5 +8,4 @@ const apartamentos = [
   { nome: "Reserva DNA 10.4.2", arquivo: "DNA_10.4.2.html" },
   { nome: "Grand Beach - Cobertura", arquivo: "GBCobertura.html" },
   { nome: "Costa Atlântica - Cobertura", arquivo: "CACobertura.html" },
-
 ];

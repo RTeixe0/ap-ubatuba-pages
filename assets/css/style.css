@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -173,15 +173,15 @@ header {
 }
 
 .condo-list li::before {
-  content: '🏊';
+  content: "🏊";
 }
 
 .apartment-list li::before {
-  content: '🛏️';
+  content: "🛏️";
 }
 
 .info-list li::before {
-  content: '🐾';
+  content: "🐾";
 }
 
 .quick-summary {
@@ -300,7 +300,7 @@ iframe {
   .details-grid {
     grid-template-columns: 1fr;
   }
-   .whatsapp-btn {
+  .whatsapp-btn {
     font-size: 1.1rem;
     padding: 0.5rem 0.5rem;
   }
@@ -432,7 +432,9 @@ iframe {
 .scroll-animate {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .scroll-animate.visible {
