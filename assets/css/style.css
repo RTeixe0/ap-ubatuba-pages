@@ -590,17 +590,23 @@ html {
 .footer-logo-wrapper .logo {
   max-width: 80px;
 }
+}
 
+.footer-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 1rem;
+}
 .site-footer .social-icons {
   margin: 1rem 0;
   padding: 1rem 0;
 }
 
+
 .site-footer .social-icons .icon {
   width: 1.5rem;
   height: 1.5rem;
 }
-
 .back-to-top {
   position: absolute;
   right: 1rem;
