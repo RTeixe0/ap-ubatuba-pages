@@ -570,6 +570,26 @@ html {
   background: var(--bg);
   text-align: center;
   padding: 2rem 1rem 6rem;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+.footer-logo-wrapper {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #003c63 50%, transparent 100%);
+  box-shadow: 0 0 10px rgba(0, 119, 182, 0.6);
+  margin-bottom: 1rem;
+}
+
+.footer-logo-wrapper .logo {
+  max-width: 80px;
+}
 }
 
 .footer-logo {
@@ -577,12 +597,16 @@ html {
   height: auto;
   margin-bottom: 1rem;
 }
-
 .site-footer .social-icons {
   margin: 1rem 0;
   padding: 1rem 0;
 }
 
+
+.site-footer .social-icons .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
 .back-to-top {
   position: absolute;
   right: 1rem;
@@ -596,5 +620,5 @@ html {
 }
 
 .footer-space {
-  height: 100px;
+  height: 120px;
 }
