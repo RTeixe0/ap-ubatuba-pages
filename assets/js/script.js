@@ -28,7 +28,7 @@
 
     // === 2. Galeria em blocos ===
     let loaded = 0;
-    const batchSize = 10;
+    const batchSize = 20;
 
     function loadNextBatch() {
       const end = Math.min(loaded + batchSize, totalImagens);
