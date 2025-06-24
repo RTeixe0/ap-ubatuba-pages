@@ -15,7 +15,7 @@
     const carouselContainer = document.getElementById("carouselContainer");
     const galleryContainer = document.getElementById("galleryContainer");
 
-    // === 1. Monta o carrossel completo (Swiper lida bem com muitas imagens) ===
+    // === 1. Monta o carrossel completo ===
     for (let i = 1; i <= totalImagens; i++) {
       const src = `${pasta}/${prefixo}${i}${extensao}`;
       if (carouselContainer) {
@@ -39,11 +39,14 @@
         thumb.alt = `Foto ${i}`;
         thumb.loading = "lazy";
         thumb.className = "mosaic-img";
-        galleryContainer.appendChild(thumb);
+
+        thumb.onload = () => thumb.classList.add("loaded");
+
         thumb.addEventListener("click", () => {
           modalImg.src = thumb.src;
           modal.style.display = "flex";
         });
+        galleryContainer.appendChild(thumb);
       }
       loaded = end;
     }
@@ -117,7 +120,7 @@
           }
         });
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     );
 
     document
