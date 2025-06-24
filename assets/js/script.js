@@ -62,7 +62,7 @@
     window.addEventListener("scroll", () => {
       if (
         window.innerHeight + window.scrollY >=
-        document.body.offsetHeight - 300
+        document.body.offsetHeight - 400
       ) {
         if (loaded < totalImagens) loadNextBatch();
       }
