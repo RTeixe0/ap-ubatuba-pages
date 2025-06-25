@@ -415,17 +415,23 @@ iframe {
   }
 }
 
+.mosaic-grid.loading {
+  min-height: 1000px;
+}
+
 .mosaic-img {
-  width: 100%;
-  display: block;
   opacity: 0;
   transition: opacity 0.5s ease;
-  border-radius: 8px;
+  will-change: opacity;
+  display: block;
+  width: 100%;
   margin-bottom: 10px;
+  border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   break-inside: avoid;
   cursor: pointer;
 }
+
 .mosaic-img.loaded {
   opacity: 1;
 }

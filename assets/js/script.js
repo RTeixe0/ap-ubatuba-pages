@@ -15,6 +15,9 @@
     const carouselContainer = document.getElementById("carouselContainer");
     const galleryContainer = document.getElementById("galleryContainer");
 
+    // ✅ Adiciona classe "loading" para reservar espaço
+    galleryContainer.classList.add("loading");
+
     // === 1. Monta o carrossel completo ===
     for (let i = 1; i <= totalImagens; i++) {
       const src = `${pasta}/${prefixo}${i}${extensao}`;
@@ -29,9 +32,15 @@
     // === 2. Galeria em blocos ===
     let loaded = 0;
     const batchSize = 15;
+    let isLoading = false;
 
     function loadNextBatch() {
+      if (isLoading || loaded >= totalImagens) return;
+      isLoading = true;
+
       const end = Math.min(loaded + batchSize, totalImagens);
+      let imagensCarregadas = 0;
+
       for (let i = loaded + 1; i <= end; i++) {
         const src = `${pasta}/${prefixo}${i}${extensao}`;
         const thumb = document.createElement("img");
@@ -39,12 +48,22 @@
         thumb.alt = `Foto ${i}`;
         thumb.loading = "lazy";
         thumb.className = "mosaic-img";
-        thumb.style.display = "none"; // Inicialmente escondida
+        thumb.style.display = "none";
 
-        // Mostra só quando estiver carregada
         thumb.onload = () => {
           thumb.classList.add("loaded");
           thumb.style.display = "block";
+          imagensCarregadas++;
+
+          // Libera o carregamento quando todas do lote atual forem carregadas
+          if (imagensCarregadas === end - loaded) {
+            isLoading = false;
+          }
+
+          // Remove "loading" da galeria após a primeira leva
+          if (loaded === 0 && imagensCarregadas === end - loaded) {
+            galleryContainer.classList.remove("loading");
+          }
         };
 
         thumb.addEventListener("click", () => {
@@ -54,7 +73,13 @@
 
         galleryContainer.appendChild(thumb);
       }
+
       loaded = end;
+
+      // ⚠️ Se nenhuma imagem carregar (erro de rede, etc.), libera a flag
+      setTimeout(() => {
+        isLoading = false;
+      }, 2000);
     }
 
     // === 3. Inicialização da galeria de forma suave ===
@@ -70,7 +95,7 @@
         window.innerHeight + window.scrollY >=
         document.body.offsetHeight - 900
       ) {
-        if (loaded < totalImagens) loadNextBatch();
+        loadNextBatch();
       }
     });
 
