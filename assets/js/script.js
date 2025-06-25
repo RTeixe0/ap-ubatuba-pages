@@ -28,7 +28,7 @@
 
     // === 2. Galeria em blocos ===
     let loaded = 0;
-    const batchSize = 20;
+    const batchSize = 15;
 
     function loadNextBatch() {
       const end = Math.min(loaded + batchSize, totalImagens);
@@ -39,13 +39,19 @@
         thumb.alt = `Foto ${i}`;
         thumb.loading = "lazy";
         thumb.className = "mosaic-img";
+        thumb.style.display = "none"; // Inicialmente escondida
 
-        thumb.onload = () => thumb.classList.add("loaded");
+        // Mostra só quando estiver carregada
+        thumb.onload = () => {
+          thumb.classList.add("loaded");
+          thumb.style.display = "block";
+        };
 
         thumb.addEventListener("click", () => {
           modalImg.src = thumb.src;
           modal.style.display = "flex";
         });
+
         galleryContainer.appendChild(thumb);
       }
       loaded = end;
@@ -62,7 +68,7 @@
     window.addEventListener("scroll", () => {
       if (
         window.innerHeight + window.scrollY >=
-        document.body.offsetHeight - 400
+        document.body.offsetHeight - 900
       ) {
         if (loaded < totalImagens) loadNextBatch();
       }

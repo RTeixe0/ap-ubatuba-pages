@@ -417,14 +417,15 @@ iframe {
 
 .mosaic-img {
   width: 100%;
-  margin-bottom: 10px;
-  border-radius: 8px;
   display: block;
-  transition: opacity 0.8s ease-out;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  border-radius: 8px;
+  margin-bottom: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  break-inside: avoid;
   cursor: pointer;
 }
-
 .mosaic-img.loaded {
   opacity: 1;
 }
@@ -663,4 +664,30 @@ html {
     position: static;
     margin-top: 1rem;
   }
+}
+.gallery-snap {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  scroll-padding: 1rem;
+  padding-bottom: 1rem;
+  min-height: 220px;
+}
+
+.gallery-snap::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-snap img {
+  flex: 0 0 auto;
+  height: 200px;
+  border-radius: 8px;
+  scroll-snap-align: start;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery-snap img:hover {
+  transform: scale(1.05);
 }
