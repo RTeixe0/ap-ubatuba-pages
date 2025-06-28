@@ -679,7 +679,7 @@ html {
 @media (max-width: 600px) {
   .back-to-top {
     margin: 1rem auto 0; /* centralizado no mobile */
-    margin-bottom: 50px;
+    margin-bottom: 75px;
   }
 }
 
