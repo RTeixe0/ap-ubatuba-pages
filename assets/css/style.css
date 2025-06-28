@@ -716,10 +716,6 @@ html {
   .footer-right {
     flex: 1 1 100%;
   }
-
-  .back-to-top {
-    margin-top: 1rem;
-  }
 }
 
 .gallery-snap {
