@@ -565,6 +565,8 @@ iframe {
   word-break: break-word;
   margin-left: auto;
   margin-right: auto;
+  font-weight: bold;
+  border: 1px solid #fdcb6e;
 }
 .badge-block + .badge-block {
   margin-top: 2rem; /* ou o valor que desejar */
